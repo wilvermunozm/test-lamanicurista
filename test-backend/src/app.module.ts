@@ -1,9 +1,10 @@
-import { Module } from '@nestjs/common';
+import { HttpModule, Module } from '@nestjs/common';
+import { CacheModule } from '@nestjs/common/cache/cache.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
-  imports: [],
+  imports: [HttpModule,CacheModule.register()],
   controllers: [AppController],
   providers: [AppService],
 })
